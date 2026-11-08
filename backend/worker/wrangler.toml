@@ -1,0 +1,17 @@
+name = "klaro-signup"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+# Reemplaza database_id por el que devuelve: wrangler d1 create klaro-leads
+[[d1_databases]]
+binding = "DB"
+database_name = "klaro-leads"
+database_id = "REEMPLAZA-ESTE-DATABASE-ID"
+
+# Variables opcionales:
+#   ALLOWED_ORIGIN - deja '*' o pon el dominio final para restringir CORS
+[vars]
+ALLOWED_ORIGIN = "*"
+
+[observability]
+enabled = true

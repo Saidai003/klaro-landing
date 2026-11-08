@@ -1,0 +1,11 @@
+# Normaliza los finales de linea en el repositorio
+* text=auto eol=lf
+
+# Archivos que deben quedar como binario
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.ico
+*.webm
+*.mp4

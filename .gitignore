@@ -1,0 +1,23 @@
+# datos de pruebas locales
+data/
+*.jsonl
+
+# capturas de la suite de pruebas
+test/shots/
+
+# sistema y editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# dependencias
+node_modules/
+
+# variables de entorno
+.env
+.env.local
+
+# archivo de prueba
+ROOT_INDEX_REDIRECT.html

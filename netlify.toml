@@ -1,0 +1,17 @@
+[build]
+  publish = "site"
+  command = "echo 'sitio estatico, sin build'"
+
+# Netlify Forms: la pagina detectada como signup recoge las reservas
+# sin necesidad de backend propio (plan gratuito: envios de formulario sin coste).
+[[redirects]]
+  from = "/api/count"
+  to = "/count"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [values.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

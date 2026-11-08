@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es" data-locale="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KLARO — Tu video, sin silencios y sin sombras</title>
+<meta name="description" content="KLARO recorta los silencios, iguala el nivel de las voces y corrige el brillo cuadro a cuadro. Pruébalo con tu propio video en el navegador, sin instalar nada.">
+<meta name="theme-color" content="#101318">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KLARO — Tu video, sin silencios y sin sombras">
+<meta property="og:description" content="Elimina silencios, iguala el nivel de las voces y corrige el brillo cuadro a cuadro. Prueba real con tu propio video, en el navegador.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101318'/%3E%3Crect x='5' y='13' width='2' height='6' fill='%23E8B04B'/%3E%3Crect x='9' y='9' width='2' height='14' fill='%23E8B04B'/%3E%3Crect x='13' y='6' width='2' height='20' fill='%2355C4C0'/%3E%3Crect x='17' y='10' width='2' height='12' fill='%2355C4C0'/%3E%3Crect x='21' y='14' width='2' height='4' fill='%23E8B04B'/%3E%3Crect x='25' y='15' width='2' height='2' fill='%23E8B04B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Ir al contenido</a>
+
+<div class="bars" aria-hidden="true">
+  <i style="--c:#e9ecef"></i><i style="--c:#e8b04b"></i><i style="--c:#55c4c0"></i><i style="--c:#8fbf6a"></i>
+  <i style="--c:#b06ab0"></i><i style="--c:#d9534f"></i><i style="--c:#4a7fd0"></i><i style="--c:#3a414b"></i>
+</div>
+
+<header class="topbar">
+  <a class="mark" href="#top" aria-label="KLARO">
+    <svg width="26" height="22" viewBox="0 0 32 26" aria-hidden="true">
+      <rect x="1" y="10" width="2.5" height="7" fill="#e8b04b"/>
+      <rect x="6" y="6" width="2.5" height="15" fill="#e8b04b"/>
+      <rect x="11" y="2" width="2.5" height="22" fill="#55c4c0"/>
+      <rect x="16" y="7" width="2.5" height="14" fill="#55c4c0"/>
+      <rect x="21" y="11" width="2.5" height="6" fill="#e8b04b"/>
+      <rect x="26" y="13" width="2.5" height="2" fill="#e8b04b"/>
+    </svg>
+    <span>KLARO</span>
+  </a>
+
+  <nav class="topnav" aria-label="Principal">
+    <a href="#demo" data-i18n="nav.demo">La prueba</a>
+    <a href="#engine" data-i18n="nav.engine">El motor</a>
+    <a href="#price" data-i18n="nav.price">Precio</a>
+    <a href="#faq" data-i18n="nav.faq">Preguntas</a>
+  </nav>
+
+  <div class="topbar-right">
+    <div class="lang">
+      <button id="lang-btn" class="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" data-i18n-attr="aria-label:a11y.langSwitch">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M1.6 8h12.8M8 1.4c1.9 1.8 2.9 4 2.9 6.6S9.9 12.8 8 14.6C6.1 12.8 5.1 10.6 5.1 8S6.1 3.2 8 1.4Z" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+        <span id="lang-current">ES</span>
+      </button>
+      <div id="lang-menu" class="lang-menu" role="menu" hidden></div>
+    </div>
+    <a class="btn btn-sm btn-ghost topbar-cta" href="#signup" data-i18n="nav.reserve">Reservar plaza</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow" id="hero-eyebrow" data-i18n="hero.eyebrow">Prototipo abierto</p>
+      <h1>
+        <span class="l1" data-i18n="hero.titleA">Tu video ya está grabado.</span>
+        <span class="l2" data-i18n="hero.titleB">El acabado todavía no.</span>
+      </h1>
+      <p class="lede" data-i18n="hero.sub"></p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#demo" data-i18n="hero.ctaPrimary">Probar con mi video</a>
+        <a class="btn btn-ghost" href="#signup" data-i18n="hero.ctaSecondary">Reservar plaza</a>
+      </div>
+      <p class="trust" data-i18n="hero.trust"></p>
+      <dl class="stats">
+        <div><dt data-i18n="hero.stat1Value">0</dt><dd data-i18n="hero.stat1Label"></dd></div>
+        <div><dt data-i18n="hero.stat2Value">100%</dt><dd data-i18n="hero.stat2Label"></dd></div>
+        <div><dt id="stat-credits">10</dt><dd data-i18n="hero.stat3Label"></dd></div>
+      </dl>
+    </div>
+
+    <figure class="hero-panel">
+      <div class="panel-head">
+        <span class="panel-title">waveform</span>
+        <span class="panel-meta" id="hero-panel-meta">—</span>
+      </div>
+      <canvas id="hero-wave" class="wave" width="1200" height="320" role="img" data-i18n-attr="aria-label:a11y.waveform"></canvas>
+      <div class="panel-foot">
+        <span class="legend"><i class="dot dot-amber"></i><span data-i18n="level1.silenceLabel">Silencio recuperable</span></span>
+        <span class="legend"><i class="dot dot-cyan"></i><span data-i18n="level1.legendClean">Fragmento limpio</span></span>
+        <span class="panel-meta mono" id="hero-time">00:00</span>
+      </div>
+    </figure>
+  </section>
+
+  <section class="band" id="demo">
+    <div class="band-head">
+      <p class="tag" data-i18n="level1.tag">Nivel 1</p>
+      <h2 data-i18n="level1.title"></h2>
+      <p class="band-sub" data-i18n="level1.sub"></p>
+    </div>
+
+    <div class="demo">
+      <div class="demo-left">
+        <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-describedby="drop-hint">
+          <input type="file" id="file-input" accept="video/*,audio/*" hidden>
+          <svg width="40" height="34" viewBox="0 0 40 34" aria-hidden="true" class="dz-icon">
+            <path d="M20 26V6m0 0-7 7m7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 24v4a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <p class="dz-title" data-i18n="level1.uploadTitle">Suelta aquí tu video</p>
+          <p class="dz-hint" id="drop-hint" data-i18n="level1.uploadHint"></p>
+          <div class="dz-actions">
+            <button type="button" class="btn btn-sm btn-primary" id="pick-file" data-i18n="level1.uploadCta">Elegir archivo</button>
+            <button type="button" class="btn btn-sm btn-ghost" id="use-sample" data-i18n="level1.sampleCta">Usar un clip de ejemplo</button>
+          </div>
+        </div>
+
+        <div id="progress" class="progress" hidden>
+          <p class="progress-file mono" id="progress-name"></p>
+          <ol class="progress-steps">
+            <li id="step-audio"><i class="pip"></i><span data-i18n="level1.stepAudio">Midiendo el audio</span></li>
+            <li id="step-video"><i class="pip"></i><span data-i18n="level1.stepVideo">Midiendo el brillo</span></li>
+            <li id="step-done"><i class="pip"></i><span data-i18n="level1.stepDone">Terminado</span></li>
+          </ol>
+          <div class="progress-bar"><i id="progress-fill"></i></div>
+        </div>
+      </div>
+
+      <div class="demo-right">
+        <div class="report">
+          <div class="report-head">
+            <h3 data-i18n="level1.reportTitle">Tu informe</h3>
+            <p class="report-sub" id="report-sub" data-i18n="level1.placeholder"></p>
+          </div>
+          <div class="readout" id="readout">
+            <div class="ro"><span class="ro-k" data-i18n="level1.silenceLabel"></span><b class="ro-v" id="ro-silence">—</b></div>
+            <div class="ro"><span class="ro-k" data-i18n="level1.loudnessLabel"></span><b class="ro-v" id="ro-lufs">—</b></div>
+            <div class="ro"><span class="ro-k" data-i18n="level1.peakLabel"></span><b class="ro-v" id="ro-peak">—</b></div>
+            <div class="ro"><span class="ro-k" data-i18n="level1.brightLabel"></span><b class="ro-v" id="ro-bright">—</b></div>
+            <div class="ro"><span class="ro-k" data-i18n="level1.brightSpreadLabel"></span><b class="ro-v" id="ro-spread">—</b></div>
+            <div class="ro"><span class="ro-k" data-i18n="level1.clipsLabel"></span><b class="ro-v" id="ro-clips">—</b></div>
+          </div>
+          <canvas id="report-wave" class="wave wave-sm" width="900" height="150"></canvas>
+          <div class="report-actions">
+            <button type="button" class="btn btn-sm btn-ghost" id="play-clean" disabled data-i18n="level1.playClean">Escuchar el fragmento limpio</button>
+            <a class="btn btn-sm btn-primary" href="#signup" id="unlock-cta" data-i18n="level1.unlock">Quiero el informe completo</a>
+          </div>
+          <p class="report-note" data-i18n="level1.reportNote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-alt" id="engine">
+    <div class="band-head">
+      <p class="tag" data-i18n="level2.tag">Nivel 2</p>
+      <h2 data-i18n="level2.title"></h2>
+      <p class="band-sub" data-i18n="level2.sub"></p>
+    </div>
+
+    <div class="engine">
+      <ul class="signal-list" id="signal-list"></ul>
+      <div class="engine-side">
+        <div class="privacy">
+          <h3 data-i18n="level2.privacyTitle"></h3>
+          <p data-i18n="level2.privacyBody"></p>
+          <button type="button" class="btn btn-sm btn-ghost" id="show-my-data" data-i18n="level2.viewSignals">Ver mis datos</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="price">
+    <div class="band-head">
+      <p class="tag" data-i18n="level3.tag">Nivel 3</p>
+      <h2 data-i18n="level3.title"></h2>
+      <p class="band-sub" data-i18n="level3.sub"></p>
+    </div>
+
+    <p class="founding-note" id="founding-note" data-i18n="level3.foundingNote"></p>
+
+    <div class="plans" id="plans"></div>
+
+    <p class="trial-note" id="trial-note" data-i18n="level3.trialNote"></p>
+  </section>
+
+  <section class="band band-alt" id="signup">
+    <div class="signup">
+      <div class="signup-copy">
+        <h2 data-i18n="signup.title"></h2>
+        <p data-i18n="signup.sub"></p>
+        <p class="ref-note" id="ref-note" hidden></p>
+        <form id="signup-form" novalidate>
+          <div class="field">
+            <label for="f-email" data-i18n="signup.emailLabel"></label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="tu@correo.com">
+          </div>
+          <div class="field">
+            <label for="f-name" data-i18n="signup.nameLabel"></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" placeholder="—">
+          </div>
+          <div class="field">
+            <label for="f-role" data-i18n="signup.roleLabel"></label>
+            <select id="f-role" name="role">
+              <option value="" data-i18n="signup.rolePlaceholder"></option>
+              <option value="creator" data-i18n="signup.roleCreator"></option>
+              <option value="podcast" data-i18n="signup.rolePodcast"></option>
+              <option value="studio" data-i18n="signup.roleStudio"></option>
+              <option value="other" data-i18n="signup.roleOther"></option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-usecase" data-i18n="signup.useCaseLabel"></label>
+            <input type="text" id="f-usecase" name="useCase" placeholder="—">
+          </div>
+          <label class="check">
+            <input type="checkbox" id="f-consent" name="consent" required>
+            <span data-i18n="signup.consent"></span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn" data-i18n="signup.submit">Reservar mi plaza</button>
+          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+        <div class="success" id="success" hidden>
+          <h3 data-i18n="signup.successTitle"></h3>
+          <p id="success-body"></p>
+          <a class="btn btn-sm btn-ghost" href="#price" data-i18n="signup.successCta"></a>
+        </div>
+      </div>
+      <aside class="signup-side">
+        <p class="mono side-label" data-i18n="signup.privacyLink"></p>
+        <ul class="side-list" id="data-preview"></ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="band" id="faq">
+    <div class="band-head">
+      <h2 data-i18n="faq.title"></h2>
+    </div>
+    <div class="faq" id="faq-list"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <p class="foot-tag" data-i18n="footer.tagline"></p>
+      <p class="foot-note" data-i18n="footer.madeIn"></p>
+    </div>
+    <div>
+      <p class="mono side-label" data-i18n="footer.status"></p>
+      <p class="foot-note" data-i18n="footer.statusText"></p>
+    </div>
+    <div>
+      <p class="mono side-label" data-i18n="footer.privacy"></p>
+      <p class="foot-note" data-i18n="footer.builtWith"></p>
+    </div>
+  </div>
+  <p class="foot-bottom"><span id="year"></span> · <span data-i18n="footer.rights"></span></p>
+</footer>
+
+<div class="modal" id="exit-modal" hidden role="dialog" aria-modal="true" aria-labelledby="exit-title">
+  <div class="modal-card">
+    <h3 id="exit-title" data-i18n="exit.title"></h3>
+    <p id="exit-body"></p>
+    <div class="modal-actions">
+      <a class="btn btn-primary" href="#signup" data-i18n="exit.cta"></a>
+      <button type="button" class="btn btn-ghost" id="exit-dismiss" data-i18n="exit.dismiss"></button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="data-modal" hidden role="dialog" aria-modal="true" aria-labelledby="data-title">
+  <div class="modal-card modal-wide">
+    <h3 id="data-title" data-i18n="level2.viewSignals"></h3>
+    <pre class="data-dump" id="data-dump"></pre>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-sm btn-ghost" id="data-copy" data-i18n="toast.copied"></button>
+      <button type="button" class="btn btn-sm btn-primary" id="data-close" data-i18n="exit.dismiss"></button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

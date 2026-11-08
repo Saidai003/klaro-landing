@@ -24,9 +24,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: actions/configure-pages@v5
-        with:
-          # activa Pages automaticamente si el repo aun no lo tiene
-          enablement: true
 
       - name: Publicar la carpeta site/
         uses: actions/upload-pages-artifact@v3
